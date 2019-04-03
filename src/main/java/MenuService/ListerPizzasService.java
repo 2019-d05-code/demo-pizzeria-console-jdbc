@@ -4,12 +4,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
-import DAO.PizzaMemDao;
+import DAO.PizzaBddDao;
 import fr.pizzeria.model.Pizza;
 
 public class ListerPizzasService extends MenuService {
 	@Override
-	public void executeUC(Scanner questionMenu, PizzaMemDao dao) throws SQLException {
+	public void executeUC(Scanner questionMenu, PizzaBddDao dao) throws SQLException {
 		// TODO Auto-generated method stub
 		System.out.println("Liste des pizzas");
 		// La fonction pour afficher

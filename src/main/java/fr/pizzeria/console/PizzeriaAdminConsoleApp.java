@@ -4,11 +4,14 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import DAO.PizzaMemDao;
+import com.mysql.jdbc.Driver;
+
+import DAO.PizzaBddDao;
 import MenuService.AjouterPizzaService;
 import MenuService.ListerPizzasService;
 import MenuService.ModifierPizzaService;
 import MenuService.SupprimerPizzaService;
+import fr.pizzeria.exception.DataAccessException;
 import fr.pizzeria.exception.StockageException;
 import fr.pizzeria.model.Pizza;
 
@@ -16,7 +19,9 @@ public class PizzeriaAdminConsoleApp {
 
 	public static void main(String[] args) throws SQLException, StockageException {
 
-		PizzaMemDao dao = new PizzaMemDao();
+		new Driver();
+		
+		PizzaBddDao dao = new PizzaBddDao();
 		Scanner questionMenu = new Scanner(System.in);
 
 		int cpt = 8;
@@ -76,7 +81,7 @@ public class PizzeriaAdminConsoleApp {
 				fin = true;
 			}
 			
-			} catch (StockageException e) {
+			} catch (StockageException | DataAccessException e) {
 				System.out.println(e.getMessage());
 			}
 		}

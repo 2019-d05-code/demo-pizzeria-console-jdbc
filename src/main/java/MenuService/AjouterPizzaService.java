@@ -3,7 +3,7 @@ package MenuService;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import DAO.PizzaMemDao;
+import DAO.PizzaBddDao;
 import fr.pizzeria.exception.StockageException;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.ListeCodesPostaux;
@@ -12,7 +12,7 @@ import utils.NumberUtils;
 
 public class AjouterPizzaService extends MenuService {
 	
-	public void executeUC(Scanner questionMenu, PizzaMemDao toto) throws StockageException, SQLException {
+	public void executeUC(Scanner questionMenu, PizzaBddDao toto) throws StockageException, SQLException {
 		// TODO Auto-generated method stub
 		System.out.println("Ajout d'une nouvelle pizza");
 		// Il va falloir cr�er une pizza
